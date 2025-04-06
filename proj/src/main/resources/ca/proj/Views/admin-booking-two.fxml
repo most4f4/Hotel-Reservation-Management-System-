@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.AdminHomePageController">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #023047;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="rulesBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Assets/rules.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="homeBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Assets/enter.png" />
+               </image>
+            </ImageView>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="30.0" top="20.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #023047;">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Home" textFill="#023047">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Go Back" textFill="#023047">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Continue" textFill="#023047">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </HBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label text="Room Booking" textFill="#219ebc">
+                           <font>
+                              <Font name="System Bold" size="31.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0" spacing="20.0">
+                     <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label text="Available Rooms">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView minHeight="300.0" prefHeight="300.0" prefWidth="300.0">
+                                 <columns>
+                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Number" />
+                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Type" />
+                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Price/Night" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefWidth="70.0">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Assets/arrow.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label text="Selected Room">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <TableView minHeight="300.0" prefHeight="300.0" prefWidth="300.0">
+                                 <columns>
+                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Number" />
+                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Type" />
+                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Price/Night" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <ImageView fitHeight="350.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Assets/roomselect.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Assets/hotel.png" />
+               </image>
+            </ImageView>
+            <Label text="Mostafa Hotels &amp; Resorts" textFill="#fb8500">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </HBox>
+   </top>
+</BorderPane>

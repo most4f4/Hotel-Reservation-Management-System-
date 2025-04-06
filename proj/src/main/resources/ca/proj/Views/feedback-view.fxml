@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.GetInfoController">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="previousBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Assets/previous.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="rulesBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Assets/rules.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="nextButton" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Assets/submit.png" />
+               </image>
+            </ImageView>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="30.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox fx:id="numberO" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Label text="Feedback" textFill="#219ebc">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" spacing="30.0">
+               <children>
+                  <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/feedback1.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" minWidth="300.0" spacing="30.0">
+                     <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label text="Booking ID">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label disable="true" text="Phone Number">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField disable="true" maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="checkOutDate" alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label disable="true" text="Feedback:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextArea disable="true" maxWidth="200.0" prefHeight="250.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Assets/hotel.png" />
+               </image>
+            </ImageView>
+            <Label text="Mostafa Hotels &amp; Resorts" textFill="#fb8500">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </HBox>
+   </top>
+</BorderPane>
