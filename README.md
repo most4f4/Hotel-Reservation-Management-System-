@@ -126,7 +126,81 @@ Before running the project, ensure you have the following installed:
 
 ## 📸 Screenshots
 
-> _(Add screenshots of your UI here in the GitHub repo once pushed.)_
+**Welcome Screen**  
+![Welcome](screenshots/welcome.png)
+
+**Reservation Details**  
+![Reservation Details](screenshots/customer-reservationDetails.png)
+
+**Room Selection**  
+![Room Selection](screenshots/customer-roomSelection.png)
+
+**Guest Details**  
+![Guest Details](screenshots/customer-Guest-Details.png)
+
+**Confirmation Step**  
+![Confirm](screenshots/customer-Confirm.png)
+
+**Reservation Confirmation**  
+![Reservation Confirmed](screenshots/customer-Confirmation-of-Reservation.png)
+
+**Feedback Form**  
+![Feedback](screenshots/customer-feedback.png)
+
+---
+
+### 🔐 Admin Flow
+
+**Admin Login**  
+![Admin Login](screenshots/admin-login.png)
+
+**Dashboard**  
+![Dashboard](screenshots/admin-dashboard.png)
+
+**Add Booking – Step 1**  
+![Add Booking P1](screenshots/admin-add-booking-p1.png)
+
+**Add Booking – Step 2**  
+![Add Booking P2](screenshots/admin-add-booking-p2.png)
+
+**Add Booking – Step 3**  
+![Add Booking P3](screenshots/admin-add-booking-p3.png)
+
+**Booking Preview**  
+![Booking Preview](screenshots/admin-add-booking-p3-confirm.png)
+
+**Booking Confirmation**  
+![Booking Confirmed](screenshots/admin-add-booking-p3-confirmed.png)
+
+**Current Bookings**  
+![Current Bookings](screenshots/admin-current-bookings.png)
+
+**Booking Double-Click Detail**  
+![Booking Detail](screenshots/admin-current-bookings-double-clicked.png)
+
+**Cancel Booking**  
+![Cancel Booking](screenshots/admin-current-bookings-cancellation.png)
+
+**Available Rooms**  
+![Available Rooms](screenshots/admin-available-rooms.png)
+
+**Search Panel**  
+![Search](screenshots/admin-search.png)
+
+**Search Result Detail**  
+![Search Double Clicked](screenshots/admin-search-double-clicked.png)
+
+**Search Field Active**  
+![Search Field](screenshots/admin-search-searchField.png)
+
+**Billing Service**  
+![Billing](screenshots/admin-bill-service.png)
+
+**Apply Discount**  
+![Apply Discount](screenshots/admin-bill-service-apply-discount.png)
+
+**Guest Reviews**  
+![Reviews](screenshots/admin-reviews.png)
 
 ## 📚 Credits
 
