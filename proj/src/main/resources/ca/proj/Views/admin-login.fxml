@@ -15,20 +15,28 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.AdminLoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="880.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.AdminLoginController">
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="rulesBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/rules.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="homeBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/home.png" />
-               </image>
-            </ImageView>
+            <Button mnemonicParsing="false" onAction="#rulesBtnPressed" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/rules.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#homeBtnPressed" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
          <BorderPane.margin>
             <Insets bottom="30.0" />
@@ -38,7 +46,7 @@
    <center>
       <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Login" textFill="#219ebc">
+            <Label text="Admin Login" textFill="#219ebc">
                <font>
                   <Font name="System Bold" size="31.0" />
                </font>
@@ -75,7 +83,7 @@
                            </font>
                         </Label>
                         <TextField fx:id="usernameTF" prefHeight="45.0" GridPane.columnIndex="1" />
-                        <Button mnemonicParsing="false" onAction="#loginPressed" prefHeight="50.0" prefWidth="130.0" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#loginPressed" prefHeight="50.0" prefWidth="130.0" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

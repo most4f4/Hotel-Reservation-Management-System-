@@ -13,20 +13,28 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.AdminHomePageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="880.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.AdminSearchController">
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #023047;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="rulesBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/rules.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="homeBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/enter.png" />
-               </image>
-            </ImageView>
+            <Button mnemonicParsing="false" onAction="#rulesBtnPressed" style="-fx-background-color: #023047;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/rules.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#sigoutBtnPressed" style="-fx-background-color: #023047;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/enter.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
          <BorderPane.margin>
             <Insets />
@@ -41,9 +49,9 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #023047;">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Go Back" textFill="#023047">
+                  <Button mnemonicParsing="false" onAction="#previousBtnPressed" prefHeight="55.0" prefWidth="120.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Go Back" textFill="#023047">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
                </children>
@@ -66,30 +74,32 @@
                   <Insets bottom="50.0" top="20.0" />
                </padding>
             </VBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="350.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../Assets/search1.png" />
                      </image>
                   </ImageView>
                   <VBox spacing="10.0">
                      <children>
-                        <TextField maxWidth="200.0" minHeight="30.0" prefHeight="30.0" promptText="Search name" />
-                        <TableView maxWidth="500.0" prefWidth="500.0">
+                        <TextField fx:id="searchTF" maxWidth="200.0" minHeight="30.0" prefHeight="30.0" promptText="Search name" />
+                        <TableView fx:id="allBookingsTV" maxWidth="600.0" prefWidth="600.0">
                           <columns>
-                            <TableColumn prefWidth="100.0" text="Booking ID" />
-                              <TableColumn prefWidth="100.0" text="Check-in Date" />
-                              <TableColumn prefWidth="100.0" text="Nights" />
-                              <TableColumn prefWidth="100.0" text="Room Num" />
-                              <TableColumn maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Room Type" />
+                            <TableColumn fx:id="reservationIDTC" prefWidth="60.0" text="Ref. ID" />
+                              <TableColumn fx:id="guestNameTC" text="Guest Name" />
+                              <TableColumn fx:id="checkInDate" prefWidth="70.0" text="Check-In " />
+                              <TableColumn fx:id="checkOutDate" text="Checko Out " />
+                              <TableColumn fx:id="priceTC" prefWidth="41.0" text="Price" />
+                              <TableColumn fx:id="statusTC" prefWidth="94.0" text="Status" />
+                              <TableColumn fx:id="roomsTC" maxWidth="150.0" minWidth="-Infinity" prefWidth="142.0" text="Rooms" />
                           </columns>
                         </TableView>
                      </children>
                   </VBox>
                </children>
                <padding>
-                  <Insets top="30.0" />
+                  <Insets right="50.0" top="30.0" />
                </padding>
             </HBox>
          </children>

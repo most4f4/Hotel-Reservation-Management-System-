@@ -15,25 +15,37 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.GetInfoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="880.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.RoomSelectionController">
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="previousBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/previous.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="rulesBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/rules.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="nextButton" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/next.png" />
-               </image>
-            </ImageView>
+            <Button mnemonicParsing="false" onAction="#previousBtnPressed" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/previous.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#rulesBtnPressed" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/rules.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#nextButtonPressed" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/next.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
          <BorderPane.margin>
             <Insets bottom="30.0" top="10.0" />
@@ -43,112 +55,141 @@
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Select Room" textFill="#219ebc">
-               <padding>
-                  <Insets top="20.0" />
-               </padding>
-               <font>
-                  <Font name="System Bold" size="28.0" />
-               </font>
-            </Label>
-            <VBox alignment="CENTER" spacing="10.0">
+            <HBox alignment="CENTER" minHeight="100.0" spacing="20.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                  <VBox alignment="CENTER" spacing="5.0">
                      <children>
-                        <VBox alignment="CENTER" spacing="5.0">
+                        <HBox style="-fx-border-color: black; -fx-border-radius: 10px; -fx-padding: 10;">
                            <children>
-                              <HBox style="-fx-border-color: black; -fx-border-radius: 10px; -fx-padding: 10;">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../Assets/singlebed.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </HBox>
-                              <Label text="Single Room">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Assets/singlebed.png" />
+                                 </image>
+                              </ImageView>
                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" spacing="5.0">
+                        </HBox>
+                        <Label text="Single Room">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox style="-fx-border-color: black; -fx-border-radius: 10px; -fx-padding: 10;">
                            <children>
-                              <HBox style="-fx-border-color: black; -fx-border-radius: 10px; -fx-padding: 10;">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../Assets/doublebed.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../Assets/singlebed.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </HBox>
-                              <Label text="Double Room">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Assets/doublebed.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Assets/singlebed.png" />
+                                 </image>
+                              </ImageView>
                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" spacing="5.0">
+                        </HBox>
+                        <Label text="Double Room">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox style="-fx-border-color: black; -fx-border-radius: 10px; -fx-padding: 10;">
                            <children>
-                              <HBox style="-fx-border-color: black; -fx-border-radius: 10px; -fx-padding: 10;">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../Assets/delux.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </HBox>
-                              <Label text="Delux Room">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Assets/delux.png" />
+                                 </image>
+                              </ImageView>
                            </children>
-                        </VBox>
-                        <VBox alignment="CENTER" spacing="5.0">
+                        </HBox>
+                        <Label text="Delux Room">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox style="-fx-border-color: black; -fx-border-radius: 10px; -fx-padding: 10;">
                            <children>
-                              <HBox style="-fx-border-color: black; -fx-border-radius: 10px; -fx-padding: 10;">
-                                 <children>
-                                    <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../Assets/penthouse.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </HBox>
-                              <Label text="Pent House">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Assets/penthouse.png" />
+                                 </image>
+                              </ImageView>
                            </children>
-                        </VBox>
+                        </HBox>
+                        <Label text="Pent House">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="numGuestsLabel" text="2 ">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label text=" Guests ">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label text="From ">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CheckInDate" text="checkinDate ">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label text=" To ">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CheckOutDate" text="CheckoutDate ">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numNights" text="Label">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="suggestionLabel" text="numRoom ">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
                      </children>
                   </HBox>
                </children>
-            </VBox>
-            <VBox alignment="CENTER">
-               <children>
-                  <Label text="2 Guests from 13/05/2025 to 17/05/2025">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label text="You need 3 Rooms.">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </VBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
@@ -158,35 +199,48 @@
                            <font>
                               <Font size="17.0" />
                            </font></Label>
-                        <TableView minHeight="300.0" prefHeight="300.0" prefWidth="300.0">
+                        <TableView fx:id="availableRoomsTV" minHeight="300.0" prefHeight="300.0" prefWidth="300.0">
                           <columns>
-                            <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Number" />
-                            <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Type" />
-                              <TableColumn minWidth="100.0" prefWidth="100.0" text="Price/Night" />
+                            <TableColumn fx:id="roomNumTC1" minWidth="100.0" prefWidth="100.0" text="Room Number" />
+                            <TableColumn fx:id="roomTypeTC1" minWidth="100.0" prefWidth="100.0" text="Room Type" />
+                              <TableColumn fx:id="pricePerNightTC1" minWidth="100.0" prefWidth="100.0" text="Price/Night" />
                           </columns>
                         </TableView>
                      </children>
                   </VBox>
-                  <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefWidth="70.0">
-                     <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../Assets/arrow.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
+                  <VBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#selectButtonPressed" prefWidth="70.0">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Assets/arrow.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#removeButtonPressed" prefWidth="70.0">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Assets/arrow2.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
                   <VBox alignment="CENTER" spacing="5.0">
                      <children>
                         <Label text="Your Selection">
                            <font>
                               <Font size="17.0" />
                            </font></Label>
-                        <TableView minHeight="300.0" prefHeight="300.0" prefWidth="300.0">
+                        <TableView fx:id="selectedRoomsTV" minHeight="300.0" prefHeight="300.0" prefWidth="300.0">
                           <columns>
-                            <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Number" />
-                            <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Type" />
-                              <TableColumn minWidth="100.0" prefWidth="100.0" text="Price/Night" />
+                            <TableColumn fx:id="roomNumTC2" minWidth="100.0" prefWidth="100.0" text="Room Number" />
+                            <TableColumn fx:id="roomTypeTC2" minWidth="100.0" prefWidth="100.0" text="Room Type" />
+                              <TableColumn fx:id="pricePerNightTC2" minWidth="100.0" prefWidth="100.0" text="Price/Night" />
                           </columns>
                         </TableView>
                      </children>
@@ -219,7 +273,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label text="\$100" GridPane.columnIndex="1">
+                  <Label fx:id="totalLabel" GridPane.columnIndex="1">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -227,12 +281,12 @@
                         <Insets />
                      </GridPane.margin>
                   </Label>
-                  <Label text="\$13" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="taxLabel" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label text="\$113" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="totalPayableLabel" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="16.0" />
                      </font>

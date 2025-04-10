@@ -1,0 +1,98 @@
+Apr 09, 2025 9:07:24 P.M. ca.proj.Utility.LoggerUtil initializeLogger
+INFO: Logger initialized
+Apr 09, 2025 9:07:48 P.M. ca.proj.Controllers.GetInfoController nextButtonPressed
+SEVERE: Invalid booking details
+Apr 09, 2025 9:07:48 P.M. ca.proj.Controllers.GetInfoController nextButtonPressed
+SEVERE: Error in booking details: Invalid dates or number of guests
+Apr 09, 2025 9:08:00 P.M. ca.proj.Database.Database createTables
+INFO: Database tables created successfully
+Apr 09, 2025 9:08:00 P.M. ca.proj.Database.Database createTables
+INFO: Admins preloaded
+Apr 09, 2025 9:08:00 P.M. ca.proj.Database.Database preloadRooms
+INFO: Rooms preloaded successfully
+Apr 09, 2025 9:08:00 P.M. ca.proj.Database.Database getAvailableRoomsForDates
+INFO: Fetched 13 available rooms for dates: 2025-04-24 to 2025-04-25
+Apr 09, 2025 9:08:53 P.M. ca.proj.Database.Database getAvailableRoomsForDates
+INFO: Fetched 13 available rooms for dates: 2025-04-24 to 2025-04-25
+Apr 09, 2025 9:09:13 P.M. ca.proj.Controllers.GuestDetailsController validate
+WARNING: Guest details validation failed: - Phone number must be 10 digits (e.g., 1234567890). | - Email must be valid (e.g., user@example.com). | 
+Apr 09, 2025 9:09:24 P.M. ca.proj.Controllers.GuestDetailsController validate
+WARNING: Guest details validation failed: - Phone number must be 10 digits (e.g., 1234567890). | - Email must be valid (e.g., user@example.com). | 
+Apr 09, 2025 9:09:30 P.M. ca.proj.Controllers.GuestDetailsController validate
+WARNING: Guest details validation failed: - Email must be valid (e.g., user@example.com). | 
+Apr 09, 2025 9:09:36 P.M. ca.proj.Controllers.GuestDetailsController validate
+INFO: Guest details validated successfully for reservation.
+Apr 09, 2025 9:09:44 P.M. ca.proj.Database.Database saveGuest
+INFO: Guest saved: 8fd28cce-eca5-440b-987b-211c357db08c
+Apr 09, 2025 9:09:44 P.M. ca.proj.Database.Database saveReservation
+INFO: Reservation saved: bdb4be99-9ba8-4c34-9f21-1bd8dd4ca27c
+Apr 09, 2025 9:09:44 P.M. ca.proj.Database.Database saveBilling
+INFO: Billing saved: aa2b4a0d-7286-40c4-8c89-ce460e628588
+Apr 09, 2025 9:09:44 P.M. ca.proj.Controllers.GuestDetailsController submitButtonPressed
+INFO: Reservation created: bdb4be99-9ba8-4c34-9f21-1bd8dd4ca27c
+Apr 09, 2025 9:10:16 P.M. ca.proj.Database.Database authenticateLogin
+INFO: User admin not authenticated
+Apr 09, 2025 9:10:17 P.M. ca.proj.Controllers.AdminLoginController loginPressed
+WARNING: Login failed: Invalid credentials for username admin
+Apr 09, 2025 9:10:20 P.M. ca.proj.Database.Database authenticateLogin
+INFO: User admin1 is authenticated
+Apr 09, 2025 9:10:20 P.M. ca.proj.Controllers.AdminLoginController loginPressed
+INFO: Admin admin1 logged in successfully.
+Apr 09, 2025 9:10:35 P.M. ca.proj.Database.Database getAvailableRoomsForDates
+INFO: Fetched 8 available rooms for dates: 2025-04-09 to 2025-04-09
+Apr 09, 2025 9:10:53 P.M. ca.proj.Database.Database getCurrentBookings
+INFO: Loaded 6 current bookings.
+Apr 09, 2025 9:11:33 P.M. ca.proj.Database.Database cancelBooking
+INFO: Reservation Cancelled: bdb4be99-9ba8-4c34-9f21-1bd8dd4ca27c
+Apr 09, 2025 9:11:33 P.M. ca.proj.Database.Database getCurrentBookings
+INFO: Loaded 5 current bookings.
+Apr 09, 2025 9:11:36 P.M. ca.proj.Database.Database getAllBookings
+INFO: Loaded 13 current bookings.
+Apr 09, 2025 9:11:56 P.M. ca.proj.Database.Database getCurrentBookings
+INFO: Loaded 5 current bookings.
+Apr 09, 2025 9:12:08 P.M. ca.proj.Database.Database deleteBooking
+INFO: Deleted booking: 113d88d5-dc51-4233-ab04-a5773ef4d315
+Apr 09, 2025 9:12:12 P.M. ca.proj.Database.Database getAllBookings
+INFO: Loaded 12 current bookings.
+Apr 09, 2025 9:12:23 P.M. ca.proj.Database.Database getCurrentBookings
+INFO: Loaded 4 current bookings.
+Apr 09, 2025 9:12:40 P.M. ca.proj.Database.Database applyDiscount
+INFO: Discount of $10.0 applied to reservation 6e208401-6c03-41ea-9b74-e0c46a93a4f7
+Apr 09, 2025 9:12:44 P.M. ca.proj.Database.Database applyDiscount
+INFO: Discount of $20.0 applied to reservation 6e208401-6c03-41ea-9b74-e0c46a93a4f7
+Apr 09, 2025 9:12:48 P.M. ca.proj.Database.Database applyDiscount
+INFO: Discount of $20.0 applied to reservation 6e208401-6c03-41ea-9b74-e0c46a93a4f7
+Apr 09, 2025 9:13:08 P.M. ca.proj.Database.Database checkOut
+INFO: Reservation checked Out: 22b15b72-e42c-44fa-8d87-fbe89bd753f9
+Apr 09, 2025 9:13:08 P.M. ca.proj.Database.Database getCurrentBookings
+INFO: Loaded 3 current bookings.
+Apr 09, 2025 9:13:12 P.M. ca.proj.Database.Database getAllBookings
+INFO: Loaded 12 current bookings.
+Apr 09, 2025 9:13:21 P.M. ca.proj.Database.Database getAllFeedback
+INFO: Loaded 5 feedback entries.
+Apr 09, 2025 9:14:16 P.M. ca.proj.Database.Database saveFeedback
+INFO: Feedback saved for reservation 39c5d912-469f-4ae1-b114-ec83d7b5d35b
+Apr 09, 2025 9:14:29 P.M. ca.proj.Database.Database authenticateLogin
+INFO: User admin1 is authenticated
+Apr 09, 2025 9:14:29 P.M. ca.proj.Controllers.AdminLoginController loginPressed
+INFO: Admin admin1 logged in successfully.
+Apr 09, 2025 9:14:30 P.M. ca.proj.Database.Database getAllFeedback
+INFO: Loaded 6 feedback entries.
+Apr 09, 2025 9:14:59 P.M. ca.proj.Database.Database getAvailableRoomsForDates
+INFO: Fetched 13 available rooms for dates: 2025-04-30 to 2025-05-01
+Apr 09, 2025 9:15:23 P.M. ca.proj.Controllers.AdminBooklingThreeGuestDetails validate
+INFO: Guest details validated successfully for reservation.
+Apr 09, 2025 9:15:25 P.M. ca.proj.Database.Database saveGuest
+INFO: Guest saved: 70019efb-6227-425f-9780-044b5f259b80
+Apr 09, 2025 9:15:25 P.M. ca.proj.Database.Database saveReservation
+INFO: Reservation saved: a0a7327d-8a3c-4038-addd-603c5b2ced98
+Apr 09, 2025 9:15:25 P.M. ca.proj.Database.Database saveBilling
+INFO: Billing saved: 26fa5f74-e2f5-4047-8932-28af5b13f523
+Apr 09, 2025 9:15:25 P.M. ca.proj.Controllers.AdminBooklingThreeGuestDetails submitButtonPressed
+INFO: Reservation created: a0a7327d-8a3c-4038-addd-603c5b2ced98
+Apr 09, 2025 9:15:28 P.M. ca.proj.Database.Database getCurrentBookings
+INFO: Loaded 4 current bookings.
+Apr 09, 2025 9:15:36 P.M. ca.proj.Database.Database cancelBooking
+INFO: Reservation Cancelled: a0a7327d-8a3c-4038-addd-603c5b2ced98
+Apr 09, 2025 9:15:36 P.M. ca.proj.Database.Database getCurrentBookings
+INFO: Loaded 3 current bookings.

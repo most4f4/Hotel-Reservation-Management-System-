@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,25 +13,28 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.reserveConfirmationController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="880.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.ReserveConfirmationController">
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="printBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/print.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="rulesBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/rules.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="homeBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/home.png" />
-               </image>
-            </ImageView>
+            <Button mnemonicParsing="false" onAction="#rulesBtn" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/rules.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#homeBtnPressed" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
          <BorderPane.margin>
             <Insets bottom="30.0" />
@@ -48,17 +52,17 @@
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER">
+            <HBox alignment="CENTER_LEFT">
                <children>
-                  <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../Assets/resConfirm.jpg" />
                      </image>
                   </ImageView>
-                  <GridPane maxHeight="500.0" maxWidth="500.0" style="-fx-border-color: black; -fx-padding: 10; -fx-border-radius: 15;">
+                  <GridPane maxHeight="500.0" maxWidth="550.0" prefWidth="470.0" style="-fx-border-color: black; -fx-padding: 10; -fx-border-radius: 15;">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="206.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="272.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="138.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="340.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -74,92 +78,92 @@
                      <children>
                         <Label text="Confirmation ID:">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label text="Name" GridPane.rowIndex="1">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label text="Email" GridPane.rowIndex="2">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label text="Phone" GridPane.rowIndex="3">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label text="Number of Guests" GridPane.rowIndex="4">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label text="Selected Room" GridPane.rowIndex="7">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label text="Total Payable:" GridPane.rowIndex="8">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="idLabel" text="1" GridPane.columnIndex="1">
+                        <Label fx:id="reservationIDLabel" text="1" GridPane.columnIndex="1">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="nameLabel" text="Mostafa " GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="emailLabel" text="test@ yahoo.com" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="phoneLabel" text="6478888888" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="numGuests" text="3" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <Label fx:id="numGuestsLabel" text="3" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="roomLabel" text="Double Standard Room" GridPane.columnIndex="1" GridPane.rowIndex="7">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="payableLabel" text="\$113" GridPane.columnIndex="1" GridPane.rowIndex="8">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label text="Check-In Date" GridPane.rowIndex="5">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label text="Check-out Date" GridPane.rowIndex="6">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="checkinDateLabel" text="13/05/2025" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="checkOutDateLabel" text="17/05/2025" GridPane.columnIndex="1" GridPane.rowIndex="6">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Label>
                      </children>

@@ -14,20 +14,28 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.AdminHomePageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="880.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.AdminBooklingThreeGuestDetails">
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #023047;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="rulesBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/rules.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="homeBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/enter.png" />
-               </image>
-            </ImageView>
+            <Button mnemonicParsing="false" onAction="#rulesBtnPressed" style="-fx-background-color: #023047;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/rules.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#signOutBtnPressed" style="-fx-background-color: #023047;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/enter.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
          <BorderPane.margin>
             <Insets />
@@ -42,14 +50,19 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #023047;">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Go Back" textFill="#023047">
+                  <Button mnemonicParsing="false" onAction="#homeBtnPressed" prefHeight="55.0" prefWidth="120.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Home" textAlignment="CENTER" textFill="#023047" wrapText="true">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Submit Booking" textFill="#023047">
+                  <Button mnemonicParsing="false" onAction="#previousBtnPressed" prefHeight="55.0" prefWidth="120.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Go Back" textAlignment="CENTER" textFill="#023047" wrapText="true">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitButtonPressed" prefHeight="55.0" prefWidth="120.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Submit Booking" textAlignment="CENTER" textFill="#023047" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
                </children>

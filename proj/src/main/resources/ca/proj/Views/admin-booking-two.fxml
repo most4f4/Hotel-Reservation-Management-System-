@@ -8,24 +8,35 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.AdminHomePageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="880.0" style="-fx-background-color: white; -fx-border-color: #8ecae6; -fx-border-width: 15;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.proj.Controllers.AdminBookinTwoRoomSelection">
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #023047;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="rulesBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/rules.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="homeBtn" fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/enter.png" />
-               </image>
-            </ImageView>
+            <Button mnemonicParsing="false" onAction="#ruleBtnPressed" style="-fx-background-color: #023047;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/rules.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#sigOutBrnPressed" style="-fx-background-color: #023047;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Assets/enter.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
          <BorderPane.margin>
             <Insets />
@@ -40,19 +51,19 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #023047;">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Home" textFill="#023047">
+                  <Button mnemonicParsing="false" onAction="#homeBtnPressed" prefHeight="55.0" prefWidth="120.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Home" textFill="#023047">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Go Back" textFill="#023047">
+                  <Button mnemonicParsing="false" onAction="#previousBtnPressed" prefHeight="55.0" prefWidth="120.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Go Back" textFill="#023047">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Continue" textFill="#023047">
+                  <Button fx:id="nextBtn" mnemonicParsing="false" onAction="#nextBtnPressed" prefHeight="55.0" prefWidth="120.0" style="-fx-background-radius: 25; -fx-background-color: #ffb703;" text="Continue" textFill="#023047">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
                </children>
@@ -63,13 +74,6 @@
             <VBox alignment="CENTER">
                <children>
                   <VBox alignment="CENTER">
-                     <children>
-                        <Label text="Room Booking" textFill="#219ebc">
-                           <font>
-                              <Font name="System Bold" size="31.0" />
-                           </font>
-                        </Label>
-                     </children>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -93,24 +97,37 @@
                                     <Font size="17.0" />
                                  </font>
                               </Label>
-                              <TableView minHeight="300.0" prefHeight="300.0" prefWidth="300.0">
+                              <TableView fx:id="availableRoomsTV" minHeight="300.0" prefHeight="300.0" prefWidth="300.0">
                                  <columns>
-                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Number" />
-                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Type" />
-                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Price/Night" />
+                                    <TableColumn fx:id="roomNumTC1" minWidth="100.0" prefWidth="100.0" text="Room Number" />
+                                    <TableColumn fx:id="roomTypeTC1" minWidth="100.0" prefWidth="100.0" text="Room Type" />
+                                    <TableColumn fx:id="pricePerNightTC1" minWidth="100.0" prefWidth="100.0" text="Price/Night" />
                                  </columns>
                               </TableView>
                            </children>
                         </VBox>
-                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefWidth="70.0">
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Assets/arrow.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
+                        <VBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#selectButtonPressed" prefWidth="70.0">
+                                 <graphic>
+                                    <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../Assets/arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#removeButtonPressed" prefWidth="70.0">
+                                 <graphic>
+                                    <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../Assets/arrow2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
                         <VBox alignment="CENTER" spacing="5.0">
                            <children>
                               <Label text="Selected Room">
@@ -118,11 +135,11 @@
                                     <Font size="17.0" />
                                  </font>
                               </Label>
-                              <TableView minHeight="300.0" prefHeight="300.0" prefWidth="300.0">
+                              <TableView fx:id="selectedRoomsTV" minHeight="300.0" prefHeight="300.0" prefWidth="300.0">
                                  <columns>
-                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Number" />
-                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Room Type" />
-                                    <TableColumn minWidth="100.0" prefWidth="100.0" text="Price/Night" />
+                                    <TableColumn fx:id="roomNumTC2" minWidth="100.0" prefWidth="100.0" text="Room Number" />
+                                    <TableColumn fx:id="roomTypeTC2" minWidth="100.0" prefWidth="100.0" text="Room Type" />
+                                    <TableColumn fx:id="pricePerNightTC2" minWidth="100.0" prefWidth="100.0" text="Price/Night" />
                                  </columns>
                               </TableView>
                            </children>
@@ -131,11 +148,97 @@
                   </HBox>
                </children>
             </HBox>
-            <ImageView fitHeight="350.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Assets/roomselect.jpg" />
-               </image>
-            </ImageView>
+            <HBox alignment="CENTER" spacing="30.0">
+               <children>
+                  <GridPane maxWidth="500.0" minWidth="250.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="135.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="128.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="142.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="0.0" prefWidth="103.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Total (Tax excluded):" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Tax (HST/GST):" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Total Payable:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalLabel" GridPane.columnIndex="3">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="taxLabel" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalPayableLabel" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Check In Date">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Check In Date" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Number of Guests" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CheckInDate" text="Label" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CheckOutDate" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numGuestsLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="suggestionLabel" GridPane.columnSpan="4" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
          </children>
       </VBox>
    </center>

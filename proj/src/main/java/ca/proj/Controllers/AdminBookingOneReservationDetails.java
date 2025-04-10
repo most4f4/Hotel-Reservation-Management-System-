@@ -10,23 +10,19 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.logging.Logger;
 
-public class GetInfoController {
+public class AdminBookingOneReservationDetails {
 
-    @FXML private ComboBox<Integer> numGuests;
     @FXML private DatePicker checkInDate;
     @FXML private DatePicker checkOutDate;
+    @FXML private ComboBox<Integer> numGuests;
     @FXML private Button nextButton;
 
-    private static final Logger logger = LoggerUtil.getLogger(); // Use shared logger
-
+    private static final Logger logger = LoggerUtil.getLogger();
 
     public void initialize() {
         nextButton.setDisable(true);
@@ -42,33 +38,39 @@ public class GetInfoController {
         }));
     }
 
-    @FXML void nextButtonPressed(ActionEvent event) {
-            try {
-                if (checkInDate.getValue().isAfter(checkOutDate.getValue())){
-                    AlertHelper.showErrorAlert("Invalid dates", "Check out date should be after the check in date.");
-                    logger.severe("Invalid booking details");
-                    throw new IllegalArgumentException("Invalid dates or number of guests");
-                }
-                RoomSelectionController controller = (RoomSelectionController) HotelReservationApplication.getControllers().get(SceneName.RoomSelection);
-                controller.setBookingDetails(checkInDate.getValue(), checkOutDate.getValue(), numGuests.getValue());
-                getStage().setTitle("Room Selection");
-                getStage().setScene(HotelReservationApplication.getScenes().get(SceneName.RoomSelection));
-
-            } catch (Exception e) {
-                logger.severe("Error in booking details: " + e.getMessage());
-            }
-    }
-
     private void updateButtons(){
         nextButton.setDisable(numGuests.getValue() == null || checkInDate.getValue() == null || checkOutDate.getValue() == null);
     }
 
+    @FXML void nextBtnPressed(ActionEvent event) {
+        try {
+            if (checkInDate.getValue().isAfter(checkOutDate.getValue())){
+                AlertHelper.showErrorAlert("Invalid dates", "Check out date should be after the check in date.");
+                logger.severe("Invalid booking details");
+                throw new IllegalArgumentException("Invalid dates or number of guests");
+            }
+            AdminBookinTwoRoomSelection controller = (AdminBookinTwoRoomSelection) HotelReservationApplication.getControllers().get(SceneName.Admin_Booking_RoomSelection);
+            controller.setBookingDetails(checkInDate.getValue(), checkOutDate.getValue(), numGuests.getValue());
+            getStage().setTitle("Room Selection");
+            getStage().setScene(HotelReservationApplication.getScenes().get(SceneName.Admin_Booking_RoomSelection));
+
+        } catch (Exception e) {
+            logger.severe("Error in booking details: " + e.getMessage());
+        }
+    }
+
     @FXML void previousBtnPressed(ActionEvent event) {
-        WindlowLoader.signOutProcess(getStage());
+        resetFields();
+        getStage().setTitle("Admin Dashboard");
+        getStage().setScene(HotelReservationApplication.getScenes().get(SceneName.AdminDashboard));
     }
 
     @FXML void rulesBtnPressed(ActionEvent event) {
         Rules.rulesButtonPressed();
+    }
+
+    @FXML void signOutBtnPressed(ActionEvent event) {
+        WindlowLoader.signOutProcess(getStage());
     }
 
     public Stage getStage() {

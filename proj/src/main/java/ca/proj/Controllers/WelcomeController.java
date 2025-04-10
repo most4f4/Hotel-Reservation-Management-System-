@@ -1,5 +1,7 @@
 package ca.proj.Controllers;
 
+import ca.proj.HotelReservationApplication;
+import ca.proj.Utility.SceneName;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
@@ -7,6 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 
 import java.io.File;
 
@@ -14,11 +17,7 @@ public class WelcomeController {
 
 
     private MediaPlayer mediaPlayer;
-
     @FXML private MediaView mediaView;
-    @FXML private ImageView feedbackImage;
-    @FXML private ImageView nextImage;
-    @FXML private ImageView replayImage;
 
     public void initialize() {
         String videoPath = new File("src/main/resources/Assets/welcome.mp4").toURI().toString();
@@ -34,28 +33,34 @@ public class WelcomeController {
             System.out.println("Video ended. Load next scene if needed.");
         });
 
-        nextImage.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
-            mediaPlayer.stop();
-            System.out.println("Skipped! Load next scene here.");
-            // Code to switch scenes if needed
-        });
-
-        replayImage.addEventFilter(MouseEvent.MOUSE_CLICKED, event ->{
-            mediaPlayer.seek(mediaPlayer.getStartTime());
-            mediaPlayer.play();
-        });
-
-    }
-
-
-    @FXML void closePressed(ActionEvent event) {
-        mediaPlayer.seek(mediaPlayer.getStartTime());
-        mediaPlayer.play();
     }
 
     @FXML void loginPressed(ActionEvent event) {
+        mediaPlayer.stop();
+        getStage().setTitle("Admin Login");
+        getStage().setScene(HotelReservationApplication.getScenes().get(SceneName.Login));
+    }
+
+    @FXML void feedbackButtonPressed(ActionEvent event) {
+        mediaPlayer.stop();
+        getStage().setTitle("Feedback");
+        getStage().setScene(HotelReservationApplication.getScenes().get(SceneName.Feedback));
+    }
+
+    @FXML void nextButtonPressed(ActionEvent event) {
+        mediaPlayer.stop();
+        getStage().setTitle("Reservation Details");
+        getStage().setScene(HotelReservationApplication.getScenes().get(SceneName.ReservationDetails));
+
+    }
+
+    @FXML void replayButtonPressed(ActionEvent event) {
         mediaPlayer.seek(mediaPlayer.getStartTime());
         mediaPlayer.play();
+    }
+
+    public Stage getStage() {
+        return (Stage) mediaView.getScene().getWindow();
     }
 
 }
