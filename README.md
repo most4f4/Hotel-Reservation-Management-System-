@@ -204,8 +204,13 @@ Before running the project, ensure you have the following installed:
 
 ## 📚 Credits
 
+Developed by : Mostafa Hasanalipourshahrabadi
 This project was implemented as part of a desktop development course/project. It showcases complete full-stack logic using JavaFX and JDBC with a clean MVC separation.
 
 ## 📃 License
 
 MIT License – free to use with attribution.
+
+## 🚀 Video Peresentation
+
+[Youtube](https://youtu.be/NgxiM42Qu88)
